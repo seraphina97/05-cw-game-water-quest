@@ -1,7 +1,7 @@
 const GRID_SIZE = 9;
 const GAME_TIME = 30; // seconds
 const WATER_CAN_IMG = 'img/water-can-transparent.png';
-const BLACK_DROP_IMG = 'black-drop.svg'; // We'll create this image below
+const BLACK_DROP_IMG = 'img/black water drop.png'; 
 
 const grid = document.getElementById('grid');
 const startBtn = document.getElementById('startGameBtn');

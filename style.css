@@ -128,6 +128,12 @@ h1 img {
   user-select: none;
 }
 
+.grid-cell img[src*="img/black water drop.png"] {
+  width: 38px;
+  height: 50px;
+  object-fit: contain;
+}
+
 .water-can-wrapper {
   position: absolute;
   top: 50%;
@@ -151,15 +157,6 @@ h1 img {
   transform-origin: center; /* Ensure scaling happens from the center */
 }
 
-@keyframes popUp {
-  0% {
-    transform: scale(0.5); /* Start scaling from the center */
-  }
-  100% {
-    transform: scale(1); /* End scaling at full size */
-  }
-}
-
 button {
   background-color: #4CAF50;
   color: white;
@@ -173,35 +170,6 @@ button {
   transition: background-color 0.2s;
 }
 
-#confetti, #raindrops {
-  pointer-events: none;
-  position: fixed;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  z-index: 100;
-  overflow: hidden;
-}
-
-.confetti-piece {
-  position: absolute;
-  width: 10px; height: 20px;
-  background: #ffeb3b;
-  border-radius: 3px;
-  opacity: 0.8;
-  animation: confetti-fall 2s linear forwards;
-}
-
-@keyframes confetti-fall {
-  to { transform: translateY(100vh) rotate(360deg);}
-}
-
-.raindrop {
-  position: absolute;
-  width: 8px; height: 20px;
-  background: black;
-  border-radius: 50% 50% 60% 60%;
-  opacity: 0.7;
-  animation: rain-fall 1.5s linear forwards;
-}
 
 @keyframes rain-fall {
   to { transform: translateY(100vh);}
@@ -219,4 +187,13 @@ button {
   height: 40px;
   width: auto;
   z-index: 10;
+}
+
+#player-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
 }
