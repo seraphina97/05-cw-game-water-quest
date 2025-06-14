@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Water Quest</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whack-a-Mole: Water Quest</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Water Quest</h1>
-    <p class="game-instructions">Collect 20 items to complete the game!</p>
-    <div class="stats">
-      <p>Cans Collected: <span id="current-cans">0</span></p>
-      <p>Time Left: <span id="timer">30</span>s</p>
+  <img src="img/cw_logo_horizontal.png" alt="CW Logo" id="cw-logo" />
+  <div class="game-container">
+    <h1>Whack-a-Mole: Water Quest</h1>
+    <div class="grid" id="grid"></div>
+    <div class="controls">
+      <button id="startGameBtn">Start Game</button>
+      <button id="restart-btn">Restart</button>
+      <span id="timer">Time: 30</span>
+      <span id="score">Score: 0</span>
     </div>
-    <div id="achievements" class="achievement"></div>
-    <div class="game-grid"></div>
-    <button id="start-game">Start Game</button>
   </div>
-  <script src="script.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>

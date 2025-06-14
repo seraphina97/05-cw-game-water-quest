@@ -23,11 +23,10 @@ Fonts:
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
+  background: #e0f7fa;
   margin: 0;
-  padding: 30px;
-  background-color: #f0f0f0;
-  color: #333;
+  padding: 0;
 }
 
 .container {
@@ -75,12 +74,36 @@ h1 img {
   color: #333;
 }
 
+.game-container {
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.controls {
+  margin-top: 20px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   margin: 0 auto;
   max-width: 500px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .grid-cell {
@@ -94,6 +117,15 @@ h1 img {
   transition: background-color 0.3s;
   position: relative;
   overflow: hidden;
+  width: 80px;
+  height: 80px;
+  background: #b2ebf2;
+}
+
+.grid-cell img {
+  width: 60px;
+  height: 60px;
+  user-select: none;
 }
 
 .water-can-wrapper {
@@ -128,7 +160,6 @@ h1 img {
   }
 }
 
-
 button {
   background-color: #4CAF50;
   color: white;
@@ -140,4 +171,52 @@ button {
   display: block;
   margin: 30px auto 0;
   transition: background-color 0.2s;
+}
+
+#confetti, #raindrops {
+  pointer-events: none;
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px; height: 20px;
+  background: #ffeb3b;
+  border-radius: 3px;
+  opacity: 0.8;
+  animation: confetti-fall 2s linear forwards;
+}
+
+@keyframes confetti-fall {
+  to { transform: translateY(100vh) rotate(360deg);}
+}
+
+.raindrop {
+  position: absolute;
+  width: 8px; height: 20px;
+  background: black;
+  border-radius: 50% 50% 60% 60%;
+  opacity: 0.7;
+  animation: rain-fall 1.5s linear forwards;
+}
+
+@keyframes rain-fall {
+  to { transform: translateY(100vh);}
+}
+
+.grid.unclickable {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#cw-logo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  height: 40px;
+  width: auto;
+  z-index: 10;
 }
